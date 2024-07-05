@@ -1,0 +1,1002 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Questrial&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
+}
+
+.display-4{
+    animation-name: slideUp;
+    animation-duration: 1.5s;
+}
+
+
+
+@keyframes slideUp {
+    from {
+        transform: translateY(300%);
+    }
+    
+}
+
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #000;
+    font-size: 1rem;
+}
+a:hover{
+    color: #DC0008;
+}
+header{
+    position: relative;
+    /* bottom: 4rem; */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    height: 70px;
+    z-index: 99;
+    padding-bottom: 7rem;
+  }
+  header .navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    padding: 0 50px;
+  }
+
+.navbar .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+header .navbar .nav-links{
+    line-height: 70px;
+    /* height: 100%; */
+  }
+  header .navbar .links{
+    display: flex;
+    margin-top: 1.5rem;
+    margin-left: 6rem;
+    gap: 1rem;
+}
+header .navbar .links li{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    padding: 2px 14px;
+}
+
+header .navbar .links li a{
+    height: 100%;
+    text-decoration: none;
+    white-space: nowrap;
+    color: #000;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+}
+header .navbar .links li a:hover{
+    color: #DC0008;
+}
+.links li:hover .htmlcss-arrow,
+.links li:hover .js-arrow{
+    transform: rotate(180deg);
+    transition: all 0.3s ease-in-out;
+}
+header .navbar .links li .sub-menu{
+    position: absolute;
+    top: 30px;
+    left: 0;
+    line-height: 40px;
+    background: white;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    display: none;
+    z-index: 2;
+}
+header .navbar .links li:hover .htmlCss-sub-menu,
+header .navbar .links li:hover .js-sub-menu{
+  display: block;
+}
+.navbar .links li .sub-menu li{
+    padding: 0 22px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .navbar .links li .sub-menu a{
+    font-size: 15px;
+    font-weight: 500;
+    margin-left: -1.5rem;
+  }
+  .navbar .links li .sub-menu a:hover{
+    color: #DC0008
+  }
+
+  .navbar .links li .sub-menu .more-arrow{
+    line-height: 40px;
+  }
+
+  .navbar .links li .sub-menu .more-sub-menu{
+    position: absolute;
+    top: 0;
+    left: 100%;
+    border-radius: 0 4px 4px 4px;
+    z-index: 1;
+    display: none;
+  }
+  .navbar .toggle_btn{
+    /* color: white; */
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+  .active_btn{
+    max-width: 100%;
+    max-height: 100%;
+    width: 190px;
+    height: 45px;
+    color: #fffafa;
+    border: none;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    align-items: center;
+    border-radius: 100px;
+    letter-spacing: 2px;
+    background: #DC0008;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding-top: .7rem;
+    margin-right: 3rem;
+    transition: scale 0.2s ease;
+    
+}
+.active_btn:hover{
+    background-color: #e7e4e4;
+    color: rgb(245, 34, 34);
+    scale: 1.05;
+}
+.active_btn:active{
+    scale: 0.95;
+}
+
+/* DropDown Menu */
+
+.dropdown_menu{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 0;
+    border-radius: 22px;
+    background: #FFF;
+    box-shadow: 6px 0px 88px 24px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    line-height: 1.7rem;
+    top: 3rem;
+    padding-right: 5rem;
+    transition: height 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+    header .dropdown_menu .links{
+        display: block;
+        margin-top: 20px;
+    }
+.dropdown_menu.open{
+    height: 300px;
+}
+
+
+header .dropdown_menu .links li{
+    display: block;
+}
+header .dropdown_menu .links li a{
+    text-decoration: none;
+    color: #000;
+    font-family: sans-serif;
+}
+
+header .dropdown_menu .links li a:hover{
+    color: #DC0008;
+}
+
+header .dropdown_menu .links li .sub-menu{
+    position: relative;
+    top: 0;
+    box-shadow: none;
+    display: none;
+}
+
+header .dropdown_menu .links li .sub-menu li{
+    padding: 0 22px;
+    border-bottom: 2px solid rgba(255,255,255,0.1);
+}
+
+header .dropdown_menu .links li .sub-menu a{
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 33px;
+}
+.links li:hover .htmlcss-arrow,
+.links li:hover .js-arrow{
+  transform: rotate(180deg);
+  }
+  header .dropdown_menu li:hover .htmlCss-sub-menu,
+  header .dropdown_menu li:hover .js-sub-menu{
+    display: block;
+   
+  }
+.dropdown_menu .active_btn{
+    padding: 0 19px 1px 35px;
+    font-size: 14px;
+    width: 205px !important;
+    display: flex;
+    justify-content: start;
+    margin-top: 1rem;
+    color: #e7e4e4;
+}
+.top-container{
+    border-radius: 0px 0px 50px 50px;
+    background: #F6F6F6;
+}
+
+
+.col-12 h1{
+    color: #151719;
+    -webkit-text-stroke-width: 1;
+    -webkit-text-stroke-color: #151719;
+    font-family: Questrial;
+    font-size: 49px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.col-12 h4{
+    color: #151719;
+    text-align: center;
+    -webkit-text-stroke-width: 0.5;
+    -webkit-text-stroke-color: #151719;
+    font-family: Questrial;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+#i1{
+    border-radius: 9.511px;
+    width: 865px;
+    height: 509px;
+    flex-shrink: 0;
+}
+/* footer code */
+
+div .email-box{
+    border-radius: .5rem;
+    position: relative;
+    top: -4rem;
+    background: linear-gradient(180deg, #FFAC2F 0%, #FF542F 51%, #FF2F48 100%);
+}
+.box2-mid{
+    color: #FFF;
+    -webkit-text-stroke-width: 1;
+    -webkit-text-stroke-color: #FFF;
+    font-family: Questrial;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    padding: 4rem;
+}
+.box{
+    margin-left: 2rem;
+    margin-top: 3rem;
+}
+.box4{
+    padding-bottom: 5rem;
+}
+
+.box3 input{
+    
+    /* padding: 9px 188px 10px 35px; */
+    display: flex;
+    width: 445px;
+    height: 50px;
+    padding: 0 2px 0 23px;
+    border-radius: 100px;
+    border-top-right-radius: 100px;
+    background: #FFF;
+    color: #000;
+    /* margin-left: 9rem; */
+    margin-top: 2rem;
+    border: none;
+    max-height: 100%;
+    max-width: 100%;
+    font-size: 19px;
+    
+}
+.btns{
+
+    /* display: flex; */
+    width: 445px;
+    height: 50px;
+    padding: 9px 0px;
+    padding: 10px 0px;
+    align-items: center;
+    text-align: center;
+    border-radius: 100px;
+    background: #151719;
+    margin-top: .5rem;
+    border: none;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    cursor: pointer;
+    max-width: 100%;
+
+    max-height: 100%;
+
+}
+
+.box .btns:hover{
+    background: rgb(223, 222, 222);
+    color: #151719;
+}
+
+
+.footer-container{
+    background: #151719;
+    margin-top: 8rem;
+}
+/* .footer-row{
+    padding-top: 10rem;
+} */
+
+.fo-text{
+    color: #FFF;
+    -webkit-text-stroke-width: 1;
+    -webkit-text-stroke-color: #FFF;
+    font-family: Questrial;
+    font-size: 29px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-left: 8rem;
+  padding-right: 12rem;
+
+}
+.fo-text1{
+    color: #FFF;
+    font-family: Questrial;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    /* margin-top: 4rem; */
+}
+.fo-text2{
+    color: #FFF;
+    -webkit-text-stroke-width: 1;
+    -webkit-text-stroke-color: #FFF;
+    font-family: Questrial;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.5rem;
+}
+.gbtn{
+    max-width: 100%;
+    max-height: 100%;
+    width: 242px;
+    height: 55px;
+    gap: 15px;
+    border-radius: 100px;
+    background: #DC0008;
+    border: none;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    margin-top: 1.2rem;
+    margin-bottom: 2rem;
+}
+.gbtn:hover{
+    background: rgb(223, 222, 222);
+    color: #DC0008;
+}
+.lbtn{
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    padding: 18px 1px 1px 36px;
+    width: 182px;
+    height: 55px;
+    gap: 15px;
+    border-radius: 100px;
+    background: #DC0008;
+    border: none;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 1.2rem;
+}
+
+.lbtn:hover{
+    background: rgb(223, 222, 222);
+    color: #DC0008;
+}
+.ctext{
+    border-top: #F6F6F6 1px solid;
+    padding: 2rem;
+    background: #000;
+    justify-content: space-around;
+}
+.last-box{
+    position: relative;
+    border-top: 1px solid rgb(207, 205, 205);
+}
+.box8 p{
+    color: #FFF;
+  font-family: Inter;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  gap: 15px;
+  padding-bottom: 1.5rem;
+  margin-left: 4rem;
+}
+.box9 p{
+    color: #FFF;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  gap: 15px;
+  padding-bottom: 1.5rem;
+  margin-left: 5rem;
+}
+
+div .box11_blog{
+    margin-top: 5rem;
+}
+div .box11_blog button {
+    background: #DC0008;
+    display: flex;
+    height: 28px;
+    padding: 8px 10px 8px 12px;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    border-radius: 100px;
+    background: #DC0008;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+div .box11_blog button:hover{
+    background: rgb(223, 222, 222);
+    color: #DC0008;
+}
+.btn1{
+    position: relative;
+    left: 15rem;
+    top: -16rem;
+}
+.btn2{
+    position: relative;
+    top: -16rem;
+  left: 18.5rem;
+}
+.btn3{
+    position: relative;
+    top: -16rem;
+  left: 19rem;
+}
+.btn4{
+    position: relative;
+    top: -15.5rem;
+  left: 14rem;
+}
+.btn5{
+    position: relative;
+    top: -15.5rem;
+  left: 20rem;
+}
+.btn6{
+    position: relative;
+    top: -15.5rem;
+  left: 15rem;
+}
+
+div .box11_blog h2{
+    color: #151719;
+  -webkit-text-stroke-width: 0.5597723126411438;
+  -webkit-text-stroke-color: #151719;
+  font-family: Questrial;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+div .box11_blog p{
+    color: rgba(21, 23, 25, 0.40);
+    font-family: Inter;
+    font-size: 17.913px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+div .box11_blog h6{
+    color: rgba(21, 23, 25, 0.40);
+    font-family: Inter;
+    font-size: 17.913px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding: 10px 0px;
+    margin-bottom: 0;
+    gap: 2px;
+    border-top: 1px solid #eaeaea;
+}
+div .box11{
+    background: #DC0008;
+    margin-top: 5rem;
+}
+
+/* media quary */
+@media (min-width: 1024px) and (max-width: 1350px) {
+    .box2-mid{
+        padding-top: 3rem;
+        padding-left: 1rem;
+        padding-right: 0;
+      }
+      .btn1 {
+        position: relative;
+        left: 12rem;
+        top: -14.5rem;
+      }
+      .btn2 {
+        position: relative;
+        top: -14rem;
+        left: 15.5rem;
+      }
+      .btn3 {
+        position: relative;
+        top: -14rem;
+        left: 17rem;
+      }
+      .btn4 {
+        position: relative;
+        top: -13.5rem;
+        left: 11rem;
+      }
+      .btn5 {
+        position: relative;
+        top: -14rem;
+        left: 17rem;
+      }
+      .btn6 {
+        position: relative;
+        top: -14rem;
+        left: 11rem;
+      }
+}
+/* middle point */
+@media (min-width: 768px) and (max-width: 1020px) {
+    #i1{
+        height: 220px;
+        width: 100%;
+    }
+    .box4btn .col-md-6 .btn{
+        width: 192px !important;
+        height: 45px;
+    }
+    header .navbar{
+        padding: 0 25px;
+        max-height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    header .navbar .links{
+        display: none;
+    }
+
+    header .navbar.logo{
+        font-size: 27px;
+        margin-left: 2rem;
+    }
+   
+    header .navbar .links li a .bx{
+        font-size: 15px;
+        display: none;
+    }
+    
+   .navbar .active_btn{
+        display: none;
+    }
+
+    .navbar .toggle_btn{
+        display: block;
+    }
+    .dropdown_menu{
+        display: block;
+    }
+
+
+   
+    .box2-mid{
+        font-size: 20px;
+        padding-left: 1rem;
+        padding-right: 0px;
+    }
+
+    .box {
+        margin-left: -2rem;
+        margin-top: 1rem;
+    }
+
+    .box3 input {
+        
+        width: 350px;
+        margin-left: 2.8rem;
+      }
+    .btns{
+        width: 350px;
+        margin-left: 2.8rem;
+    }
+    .box2-mid{
+        font-size: 25px;
+    }
+
+    .box9 p{
+        margin-left: 9rem;
+    }
+    .fo-text{
+        font-size: 32px;
+        margin-right: 4rem;
+    }
+
+    .fo-text1{
+        font-size: 17px;
+    }
+    .fo-text2{
+        font-size: 25px;
+    }
+   .gbtn{
+    font-size: 12px;
+   }
+   .lbtn{
+    font-size: 12px;
+   }
+   .btn1 {
+    position: relative;
+    left: 9rem;
+    top: -12.5rem;
+  }
+  .btn2 {
+    position: relative;
+    top: -12rem;
+    left: 13.5rem;
+  }
+  .btn3 {
+    position: relative;
+    top: -13rem;
+    left: 14rem;
+  }
+  .btn4 {
+    position: relative;
+    top: -12.5rem;
+    left: 9rem;
+  }
+  .btn5 {
+    position: relative;
+    top: -12.5rem;
+    left: 15rem;
+  }
+  .btn6 {
+    position: relative;
+    top: -12.5rem;
+    left: 9rem;
+  }
+   
+  
+    
+}
+    
+
+
+@media (min-width: 576px) and (max-width: 768px){
+    #i1{
+        height: 210px;
+        width: 100%;
+    }
+    .box4btn .col-sm-6 .btn{
+        width: 240px !important;
+        height: 45px;
+    }
+
+    .col-sm-6 .btn:hover{
+        background: rgb(223, 222, 222);
+        color: #DC0008;
+    }
+    header .navbar{
+        padding: 0 25px;
+        max-height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    header .navbar .links{
+        display: none;
+    }
+
+    header .navbar.logo{
+        font-size: 27px;
+        margin-left: 2rem;
+    }
+   
+    header .navbar .links li a .bx{
+        font-size: 15px;
+        display: none;
+    }
+    
+   .navbar .active_btn{
+        display: none;
+    }
+
+    .navbar .toggle_btn{
+        display: block;
+    }
+    .dropdown_menu{
+        display: block;
+    }
+    .box {
+        margin-left: 1.5rem;
+        margin-top: -4rem;
+    }
+    .box3 input{
+       
+        width: 468px;
+    }
+    .btns{
+        width: 468px;
+    }
+
+
+    .follow h2{
+        text-align: center;
+    }
+    .follow p{
+        font-size: 20px;
+        text-align: center;
+    }
+    .follow button{
+        width: 500px;
+        margin-left: 3rem;
+        padding: 11px 34.217px 15.742px 34px;
+    }
+
+    .box2-mid{
+        font-size: 24px;
+        padding: 3rem 0;
+    }
+    .fo-text{
+        padding-left: 4rem;
+        padding-right: 12rem;
+        padding-bottom: 2rem;
+    }
+    .box6{
+        padding-left: 4rem;
+    }
+    .box7 {
+        padding-left: 4rem;
+    }
+
+    .box8 p{
+        font-size: 17px;
+        text-align: center;
+    }
+    .box9 p{
+        font-size: 17px;
+        text-align: center;
+    }
+
+    .btn1 {
+        position: relative;
+        left: 19rem;
+        top: -19rem;
+      }
+      .btn2 {
+        position: relative;
+        top: -19rem;
+        left: 23.5rem;
+      }
+      .btn3 {
+        position: relative;
+        top: -19.5rem;
+        left: 25rem;
+      }
+      .btn4 {
+        position: relative;
+        top: -19.5rem;
+        left: 19rem;
+      }
+      .btn5 {
+        position: relative;
+        top: -18.5rem;
+        left: 24rem;
+      }
+      .btn6 {
+        position: relative;
+        top: -18.5rem;
+        left: 19rem;
+      }
+}
+
+@media (min-width: 212px) and (max-width: 576px){
+    #i1{
+        height: 200px;
+        width: 100%;
+    }
+    .box4btn{
+        margin-left: 1.5rem;
+        margin-top: 1rem;
+    }
+    .box4btn .col-sm-6 .btn{
+        width: 150px !important;
+        height: 35px;
+        font-size: 12px;
+        margin-bottom: 1rem;
+    }
+
+    .col-sm-6 .btn2{
+        position: relative;
+        top: -3.47rem;
+        left: 11rem;
+    }
+    .col-sm-6 .btn3{
+        position: relative;
+        top: -3rem;
+        
+    }
+    .col-sm-6 .btn4{
+        position: relative;
+        top: -6.47rem;
+        left: 11rem;
+
+    }
+
+    .header{
+        margin-bottom: 2.5rem;
+    }
+    header .navbar{
+        padding: 0 25px;
+        max-height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    header .navbar .links{
+        display: none;
+    }
+
+    header .navbar.logo{
+        font-size: 27px;
+        margin-left: 2rem;
+    }
+   
+    header .navbar .links li a .bx{
+        font-size: 15px;
+        display: none;
+    }
+    
+   .navbar .active_btn{
+        display: none;
+    }
+
+    .navbar .toggle_btn{
+        display: block;
+    }
+    .dropdown_menu{
+        display: block;
+    }
+    .box{
+        margin-top: 0;
+    }
+
+    .div .email-box{
+        top: -7rem;
+    }
+    .box2-mid{
+        font-size: 20px;
+        padding-top: 1rem;
+        padding: 0;
+    }
+    .box3 input{
+        
+        width: 443px;
+    }
+    .btns{
+        width: 433px;
+    }
+    .fo-text{
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .fo-text1{
+        margin-top: 4rem;
+    }
+    .box6{
+        padding-left: 2rem;
+    }
+    .box7{
+        padding-left: 2rem;
+    }
+    .box8 p{
+        font-size: 15px;
+        margin-left: 2rem;
+        
+    }
+    .box9 p{
+        font-size: 15px;
+        margin-left: 2rem;
+    }
+
+
+    .btn1 {
+        position: relative;
+        left: 9rem;
+        top: -13rem;
+      }
+      .btn2 {
+        position: relative;
+        top: -12.5rem;
+        left: 14.5rem;
+      }
+      .btn3 {
+        position: relative;
+        top: -12.5rem;
+        left: 15rem;
+      }
+      .btn4 {
+        position: relative;
+        top: -12.5rem;
+        left: 9rem;
+      }
+      .btn5 {
+        position: relative;
+        top: -12.5rem;
+        left: 15rem;
+      }
+      .btn6 {
+        position: relative;
+        top: -12.5rem;
+        left: 10rem;
+      }
+}
